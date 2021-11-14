@@ -7,12 +7,12 @@ namespace For_lesson
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int m = int.Parse(Console.ReadLine());
-            int x = int.Parse(Console.ReadLine());
-            int y = int.Parse(Console.ReadLine());
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            int x2 = int.Parse(Console.ReadLine());
+            int y2 = int.Parse(Console.ReadLine());
 
-            if ((x - n == -1 || x - n == 1) && (y - m == -1 || y - m == 1))
+            if ((Math.Abs(x1 - x2) <= 1) && (Math.Abs(y1 - y2) <= 1))
                 Console.WriteLine("YES");
             else
                 Console.WriteLine("NO");
