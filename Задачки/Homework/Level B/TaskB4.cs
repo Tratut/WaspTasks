@@ -20,8 +20,68 @@ namespace Homework
         public static bool CheckBrackets(string s)
         {
             // Здесь необходимо написать код.
+            char[] mas, chek = { '(', ')', '{', '}', '[', ']', '<', '>' };
+            mas = s.ToCharArray();
+            bool flag = false;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (mas[i] == '(' || mas[i] == '{' || mas[i] == '[' || mas[i] == '<')
+                    if (mas[i] == '(')
+                    {
+                        for (int j = i; j < mas.Length; j++)
+                        {
+                            if (mas[j] == mas[i] + 1)
+                            {
+                                mas[i] = '0';
+                                mas[j] = '0';
+                            }
+                            else if (chek.Contains(mas[j]) && mas[j] != ')') return false;
+                        }
+                    }
+                    if (mas[i] == '{')
+                    {
+                        for (int j = i; j < mas.Length; j++)
+                        {
+                            if (mas[j] == mas[i] + 2)
+                            {
+                                mas[i] = '0';
+                                mas[j] = '0';
+                            }
+                            else if (chek.Contains(mas[j]) && mas[j] != '}') return false;
+                        }
+                    }
+                    if (mas[i] == '[')
+                    {
+                        for (int j = i; j < mas.Length; j++)
+                        {
+                            if (mas[j] == mas[i] + 2)
+                            {
+                                mas[i] = '0';
+                                mas[j] = '0';
+                            }
+                            else if (chek.Contains(mas[j]) && mas[j] != ']') return false;
+                        }
+                    }
+                    if (mas[i] == '<')
+                    {
+                        for (int j = i; j < mas.Length; j++)
+                        {
+                            if (mas[j] == mas[i] + 2)
+                            {
+                                mas[i] = '0';
+                                mas[j] = '0';
+                            }
+                            else if (chek.Contains(mas[j]) && mas[j] != '>') return false;
+                        }
+                    }
 
-            return false;
+            }
+            foreach (char k in mas)
+            {
+                if (chek.Contains(k)) flag = true;
+            }
+            if (flag) return false;
+            return true;
         }
     }
 }
