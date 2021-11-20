@@ -22,8 +22,17 @@ namespace Homework
         public static string Decrypt(string key)
         {
             // Здесь необходимо написать код.
+            int[] mas = new int[26];
+            for(int i = 0; i < mas.Length - 1; i++) mas[i] = 0;
+            foreach(char k in key)
+            {
+                if ('a' <= k && k <= 'z')
+                    mas[k - 'a'] += 1;
+            }
+            string res = "";
+            foreach (int k in mas) res += Convert.ToString(k);
 
-            return "";
+            return res;
         }
     }
 }
